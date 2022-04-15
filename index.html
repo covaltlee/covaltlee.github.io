@@ -1,0 +1,1300 @@
+<!--
+    THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=tree-basic
+-->
+<!DOCTYPE html>
+<html style="height: 100%">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body style="height: 100%; margin: 0">
+        <div id="container" style="height: 100%"></div>
+
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/echarts.min.js"></script>
+        <!-- Uncomment this line if you want to dataTool extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/dist/extension/dataTool.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use gl extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to echarts-stat extension
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+        -->
+        <!-- Uncomment this line if you want to use map
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/map/js/china.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5.3.2/map/js/world.js"></script>
+        -->
+        <!-- Uncomment these two lines if you want to use bmap extension
+        <script type="text/javascript" src="https://api.map.baidu.com/api?v=2.0&ak=<Your Key Here>"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@{{version}}/dist/extension/bmap.min.js"></script>
+        -->
+
+        <script type="text/javascript">
+var dom = document.getElementById("container");
+var myChart = echarts.init(dom);
+var app = {};
+
+var option;
+
+var ROOT_PATH = 'https://cdn.jsdelivr.net/gh/apache/echarts-website@asf-site/examples'
+
+myChart.showLoading();
+$.get(ROOT_PATH + '/data/asset/data/flare.json', function (data) {
+  myChart.hideLoading();
+  data.children.forEach(function (datum, index) {
+    index % 2 === 0 && (datum.collapsed = true);
+  });
+  data =
+{
+  "id": 0,
+  "name": "root",
+  "children": [
+    {
+      "id": 181,
+      "name": "inHR 사업목표 30억 달성",
+      "children": [
+        {
+          "id": 182,
+          "name": "매출목표 30억 달성",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 183,
+      "name": "inHR 매출목표 달성",
+      "children": [
+        {
+          "id": 218,
+          "name": "df",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 185,
+      "name": "ㅇㅇ",
+      "children": [
+        {
+          "id": 186,
+          "name": "11",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 220,
+      "name": "ㄹㄹㅀ",
+      "children": [
+        {
+          "id": 221,
+          "name": "ㅇㄹㄴㅇ",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 229,
+      "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 기획/디자인",
+      "children": [
+        {
+          "id": 1617,
+          "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+          "children": []
+        },
+        {
+          "id": 1618,
+          "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+          "children": []
+        },
+        {
+          "id": 1619,
+          "name": "채용플랫폼 초격차 실현을 위한 신제품 개발 (과제 이관으로 종료)",
+          "children": []
+        },
+        {
+          "id": 1620,
+          "name": "고객만족도 향상을 위한 사업지원",
+          "children": []
+        },
+        {
+          "id": 1734,
+          "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 디자인",
+          "children": [
+            {
+              "id": 1735,
+              "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 1736,
+              "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 1737,
+              "name": "채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 1738,
+              "name": "고객만족도 향상을 위한 사업지원",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1855,
+          "name": "[H] 채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 기획",
+          "children": [
+            {
+              "id": 1856,
+              "name": "[H] 잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 1857,
+              "name": "[H] 고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 1858,
+              "name": "[H] 채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 1859,
+              "name": "[H] 고객만족도 향상을 위한 사업지원",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1874,
+          "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 기획",
+          "children": [
+            {
+              "id": 1875,
+              "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 1876,
+              "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 1877,
+              "name": "채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 1878,
+              "name": "고객만족도 향상을 위한 사업지원",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1919,
+          "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 디자인",
+          "children": [
+            {
+              "id": 1920,
+              "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 1921,
+              "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 1922,
+              "name": "채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 1923,
+              "name": "고객만족도 향상을 위한 사업지원",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1948,
+          "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 기획",
+          "children": [
+            {
+              "id": 1949,
+              "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 1950,
+              "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 1951,
+              "name": "채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 1952,
+              "name": "고객만족도 향상을 위한 사업 지원",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 2620,
+          "name": "채용플랫폼 초격차 실현 및 고객만족도 향상을 위한 제품 기획",
+          "children": [
+            {
+              "id": 2621,
+              "name": "잡플렉스 상품성 강화를 통한 제품 초격차 실현",
+              "children": []
+            },
+            {
+              "id": 2622,
+              "name": "고객만족도 향상을 위한 잡플렉스 기능 및 성능 개선",
+              "children": []
+            },
+            {
+              "id": 2623,
+              "name": "채용플랫폼 초격차 실현을 위한 신제품 개발",
+              "children": []
+            },
+            {
+              "id": 2624,
+              "name": "고객만족도 향상을 위한 사업지원",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 243,
+      "name": "리더 인생혁명 : 부캐프로젝트",
+      "children": [
+        {
+          "id": 251,
+          "name": "[부캐] STRATEGIST : 전략코칭 습관화",
+          "children": []
+        },
+        {
+          "id": 1245,
+          "name": "구성원 역량함양 MPF",
+          "children": []
+        },
+        {
+          "id": 1829,
+          "name": "[역량함양] 긍정기술 함양미션",
+          "children": [
+            {
+              "id": 1830,
+              "name": "하반기 수용성 점수 상승",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3306,
+          "name": "[역량함양] 우호기술 함양미션",
+          "children": [
+            {
+              "id": 3307,
+              "name": "하반기 우호성 점수 상승",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 3318,
+          "name": "능동성 함양미션",
+          "children": [
+            {
+              "id": 3319,
+              "name": "[역량함양] 능동기술 함양미션",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 9611,
+          "name": "리더 특강 기획/진행 ",
+          "children": [
+            {
+              "id": 9612,
+              "name": "[리더 특강] 리더들의 리더십, 커뮤니케이션 등의 역량 강화 ",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 24364,
+          "name": "[역량함양] 긍정기술 함양미션",
+          "children": [
+            {
+              "id": 24365,
+              "name": "하반기 긍정성 점수 상승",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 31851,
+          "name": "21년 4분기 리더 인생혁명 기획&실행",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 264,
+      "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증 유지",
+      "children": [
+        {
+          "id": 627,
+          "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증 유지",
+          "children": [
+            {
+              "id": 628,
+              "name": "ISMS / CSAP 인증유지",
+              "children": []
+            },
+            {
+              "id": 629,
+              "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+              "children": []
+            },
+            {
+              "id": 630,
+              "name": "전사 관점의 업무 확장",
+              "children": []
+            },
+            {
+              "id": 631,
+              "name": "정보보호 운영체계 고도화",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1015,
+          "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증 유지",
+          "children": [
+            {
+              "id": 1020,
+              "name": "ISMS/CSAP 인증유지",
+              "children": []
+            },
+            {
+              "id": 1021,
+              "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+              "children": []
+            },
+            {
+              "id": 1022,
+              "name": "전사 관점의 업무 확장",
+              "children": []
+            },
+            {
+              "id": 1027,
+              "name": "정보보호 운영체계 고도화",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1142,
+          "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증 유지",
+          "children": [
+            {
+              "id": 1143,
+              "name": "ISMS / CSAP 인증유지",
+              "children": []
+            },
+            {
+              "id": 1144,
+              "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+              "children": []
+            },
+            {
+              "id": 1145,
+              "name": "정보보호 운영체계 고도화",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1833,
+          "name": "ISMS / CSAP 인증유지",
+          "children": []
+        },
+        {
+          "id": 1834,
+          "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+          "children": []
+        },
+        {
+          "id": 1836,
+          "name": "전사 관점의 업무 확장",
+          "children": []
+        },
+        {
+          "id": 1837,
+          "name": "정보보호 운영체계 고도화",
+          "children": []
+        },
+        {
+          "id": 1913,
+          "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증 유지",
+          "children": [
+            {
+              "id": 1915,
+              "name": "ISMS / CSAP 인증유지",
+              "children": []
+            },
+            {
+              "id": 1916,
+              "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+              "children": []
+            },
+            {
+              "id": 1917,
+              "name": "전사 관점의 업무 확장",
+              "children": []
+            },
+            {
+              "id": 1918,
+              "name": "정보보호 운영체계 고도화",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 2106,
+          "name": "안정적인 정보보호 체계 운영 및 ISMS/CSAP 인증유지",
+          "children": [
+            {
+              "id": 2107,
+              "name": "ISMS / CSAP 인증유지",
+              "children": []
+            },
+            {
+              "id": 2108,
+              "name": "대내외 정보보호 관리체계의 안정적인 상시 운영",
+              "children": []
+            },
+            {
+              "id": 2109,
+              "name": "정보보호 운영체계 고도화 - 클라우드 기술전 운영 점검 및 개선사항 수립",
+              "children": []
+            },
+            {
+              "id": 2718,
+              "name": "정보보호 운영체계 고도화 - 고객사 대상 수탁사 점검 표준화",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 357,
+      "name": "AI/데이터 분석 기술을 활용한 채용플랫폼/인사솔루션 제품 고도화",
+      "children": [
+        {
+          "id": 358,
+          "name": "AI역량검사/신역량검사 솔버 개발/검증/유지보수",
+          "children": []
+        },
+        {
+          "id": 359,
+          "name": "구인자/구직자를 연결할 데이터 기반 매칭/추천 방법론 개발",
+          "children": []
+        },
+        {
+          "id": 1285,
+          "name": "자연어 처리(언어 모델)을 위한 학습/연구",
+          "children": [
+            {
+              "id": 1286,
+              "name": "Machine Learning 개발 기초 배경 지식 확보",
+              "children": []
+            },
+            {
+              "id": 1287,
+              "name": "키워드 추출, 텍스트 요약 등을 위한 자연어 처리 연구 진행",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1292,
+          "name": "제품 고도화를 위한 AI/데이터 분석 기반 기술 확보",
+          "children": [
+            {
+              "id": 1293,
+              "name": "키워드 추출, 텍스트 요약 등을 위한 자연어 언어모델 기술력 향상",
+              "children": []
+            },
+            {
+              "id": 2717,
+              "name": "Machine Learning 개발 기초 배경 지식 확보",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1301,
+          "name": "AI/데이터 분석 기술을 활용한 HR 솔루션 제품 검증 및 개발",
+          "children": [
+            {
+              "id": 1302,
+              "name": "AI역량검사/신역량검사 솔버 개발/검증/유지보수",
+              "children": []
+            },
+            {
+              "id": 1303,
+              "name": "구인자/구직자를 연결할 데이터 기반 매칭/추천 방법론 개발",
+              "children": []
+            },
+            {
+              "id": 1304,
+              "name": "제품 고도화를 위한 AI/데이터 분석 기반 기술 확보",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 1388,
+          "name": "AI/데이터 분석 기술을 활용한 채용플랫폼/인사솔루션 제품 고도화",
+          "children": [
+            {
+              "id": 1389,
+              "name": "신역량검사 솔버 개발/검증",
+              "children": []
+            },
+            {
+              "id": 1391,
+              "name": "제품 고도화를 위한 AI/데이터 분석 기반 기술 확보",
+              "children": []
+            },
+            {
+              "id": 33661,
+              "name": "구인자/구직자를 연결할 데이터 기반 매칭/추천 방법론 개발 보조",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 2123,
+          "name": "AI/데이터 분석 기술을 활용한 채용플랫폼/인사솔루션 제품 고도화 및 역량검사 솔버 개발",
+          "children": [
+            {
+              "id": 2124,
+              "name": "AI역량검사/신역량검사 솔버 개발/검증/유지보수",
+              "children": []
+            },
+            {
+              "id": 2125,
+              "name": "제품 고도화를 위한 AI/데이터 분석 기반 기술 확보",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 2507,
+          "name": "AI/데이터 분석 기술을 활용한 구인자/구직자 매칭/추천 방법 고도화",
+          "children": [
+            {
+              "id": 2508,
+              "name": "구인자/구직자를 연결할 데이터 기반 매칭/추천 방법론 개발",
+              "children": []
+            },
+            {
+              "id": 2509,
+              "name": "제품 고도화를 위한 AI/데이터 분석 기반 기술 확보",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": 10695,
+          "name": "제품  고도화를 위한 AI/데이터 분석 기반 기술 확보",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": 563,
+      "name": "CIM 세계표준을 위한 제품 강화",
+      "children": [
+        {
+          "id": 159,
+          "name": "CIM 성공을 이끌 기반 준비",
+          "children": [
+            {
+              "id": 364,
+              "name": "CIM 웹 플랫폼 출시",
+              "children": [
+                {
+                  "id": 1099,
+                  "name": "웹 프론트 기술 확보",
+                  "children": []
+                },
+                {
+                  "id": 1100,
+                  "name": "CIM 웹 체험 서비스 개발",
+                  "children": []
+                },
+                {
+                  "id": 1103,
+                  "name": "미래 성장동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 494,
+              "name": "CIM 상품성 향상",
+              "children": []
+            },
+            {
+              "id": 495,
+              "name": "CAD 상품성 향상",
+              "children": []
+            },
+            {
+              "id": 496,
+              "name": "미래 성장 동력 준비",
+              "children": []
+            },
+            {
+              "id": 552,
+              "name": "CIM 및 CAE 도면 성과품 기반 향상",
+              "children": [
+                {
+                  "id": 553,
+                  "name": "Drafter 제품 출시 관리",
+                  "children": []
+                },
+                {
+                  "id": 554,
+                  "name": "도면 제품 개발 관리",
+                  "children": []
+                },
+                {
+                  "id": 555,
+                  "name": "미래 성장동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 723,
+              "name": "CAD 플랫폼의 상품성 강화",
+              "children": [
+                {
+                  "id": 724,
+                  "name": "iPlatform Studio 개발",
+                  "children": []
+                },
+                {
+                  "id": 725,
+                  "name": "CAD 제품 유지보수 및 중장기 기술 준비",
+                  "children": []
+                },
+                {
+                  "id": 726,
+                  "name": "미래 성장 동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 775,
+              "name": "성공적인 웹 플랫폼 출시",
+              "children": [
+                {
+                  "id": 776,
+                  "name": "시각적 체험과 관련된 기술 확보",
+                  "children": []
+                },
+                {
+                  "id": 777,
+                  "name": "웹 기반 체험 플랫폼 서비스 오픈",
+                  "children": []
+                },
+                {
+                  "id": 918,
+                  "name": "미래 성장 동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 868,
+              "name": "CAD 플랫폼의 상품성 강화",
+              "children": [
+                {
+                  "id": 869,
+                  "name": "One Desk 출시",
+                  "children": []
+                },
+                {
+                  "id": 870,
+                  "name": "CAD 제품 유지보수 및 중장기 기술 준비",
+                  "children": []
+                },
+                {
+                  "id": 871,
+                  "name": "미래 성장 동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1278,
+              "name": "CAD 플랫폼의 상품성 강화",
+              "children": [
+                {
+                  "id": 1279,
+                  "name": "CAD 제품의 상품성 강화",
+                  "children": []
+                },
+                {
+                  "id": 1280,
+                  "name": "CAD 제품 중장기 기술 준비",
+                  "children": []
+                },
+                {
+                  "id": 1281,
+                  "name": "출시 제품의 안정적 지원",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1296,
+              "name": "CIM 및 CAE 도면 성과품 기반 향상",
+              "children": [
+                {
+                  "id": 1306,
+                  "name": "Dream 핵심 기능 출시",
+                  "children": []
+                },
+                {
+                  "id": 1317,
+                  "name": "도면 제품 신기능 개발 및 유지보수",
+                  "children": []
+                },
+                {
+                  "id": 1323,
+                  "name": "미래 성장동력 준비",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1338,
+              "name": "CAD 응용제품의 상품성 강화와 효율적인 운영",
+              "children": [
+                {
+                  "id": 1339,
+                  "name": "CIM 대응 Drafter 신기능 개발",
+                  "children": []
+                },
+                {
+                  "id": 1340,
+                  "name": "도면 제품 신기능 개발 및 유지보수",
+                  "children": []
+                },
+                {
+                  "id": 1341,
+                  "name": "미래 성장동력 준비",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 564,
+          "name": "[KR1]CIM 상품성 향상을 위한 기능 탑재",
+          "children": []
+        },
+        {
+          "id": 565,
+          "name": "[KR2]CIM 중국버전 출시",
+          "children": []
+        },
+        {
+          "id": 566,
+          "name": "[KR3]미래 성장동력 준비",
+          "children": []
+        },
+        {
+          "id": 612,
+          "name": "CIM 성공을 위한 기술 담기",
+          "children": [
+            {
+              "id": 502,
+              "name": "믿음 가는 CIM 만들기",
+              "children": [
+                {
+                  "id": 503,
+                  "name": "CIM 외부 연동 강화",
+                  "children": []
+                },
+                {
+                  "id": 506,
+                  "name": "CIM 비정상종료 모니터링 체계화",
+                  "children": []
+                },
+                {
+                  "id": 508,
+                  "name": "기존기능 개선",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 613,
+              "name": "사용자의 요구사항을 기능으로 담아내기",
+              "children": []
+            },
+            {
+              "id": 619,
+              "name": "안정적인 품질 제공을 위한 기술 담기",
+              "children": []
+            },
+            {
+              "id": 621,
+              "name": "미래를 위한 기술 담기",
+              "children": []
+            },
+            {
+              "id": 1168,
+              "name": "더 나은 기술로 선도하는 CIM 만들기",
+              "children": [
+                {
+                  "id": 1169,
+                  "name": "중국 실무대응을 위한 신규기능 개발 및 개선",
+                  "children": []
+                },
+                {
+                  "id": 1170,
+                  "name": "정기 업데이트 및 핫픽스를 통한 상시 안정화 (CI/CD 지속 개선)",
+                  "children": []
+                },
+                {
+                  "id": 1171,
+                  "name": "차세대 코어 기술 연구",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1256,
+              "name": "사용자 편의성을 고려하는 CIM 개발하기",
+              "children": [
+                {
+                  "id": 1257,
+                  "name": "사용자 요구사항 반영",
+                  "children": []
+                },
+                {
+                  "id": 1258,
+                  "name": "CIM 사용자의 신뢰성 향상",
+                  "children": []
+                },
+                {
+                  "id": 1259,
+                  "name": "성장을 위한 지속적인 학습",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1321,
+              "name": "사용자의 업무효율 향상을 위한 CIM",
+              "children": [
+                {
+                  "id": 1324,
+                  "name": "사용자 중심의 기능 개발 및 개선",
+                  "children": []
+                },
+                {
+                  "id": 1325,
+                  "name": "안정적인 CIM",
+                  "children": []
+                },
+                {
+                  "id": 1326,
+                  "name": "성장기반 마련",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1519,
+              "name": "더 편리한 CIM, 더 멋진 CIM",
+              "children": [
+                {
+                  "id": 3729,
+                  "name": "UI 고도화 및 심미성, 안정성 향상",
+                  "children": []
+                },
+                {
+                  "id": 3730,
+                  "name": "정기 업데이트 및 핫픽스를 통한 상시 안정화 (CI/CD  지속 개선)",
+                  "children": []
+                },
+                {
+                  "id": 3731,
+                  "name": "차세대 Framework를 위한 기반 구축 및 팀 개발 문화 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1784,
+              "name": "긍정적인 영향력을 가진 CIM만들기",
+              "children": [
+                {
+                  "id": 4046,
+                  "name": "사용자에게 FIT한 기능 만들기",
+                  "children": []
+                },
+                {
+                  "id": 4047,
+                  "name": "수량 및 보강재의 안정성과 품질 확보",
+                  "children": []
+                },
+                {
+                  "id": 4048,
+                  "name": "같이 성장하기",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1789,
+              "name": "CIM Detail Modelling 확장하기",
+              "children": [
+                {
+                  "id": 1790,
+                  "name": "도로/터널/지반 확장을 위한 신규개발 및 개선",
+                  "children": []
+                },
+                {
+                  "id": 1791,
+                  "name": "정기 업데이트 및 핫픽스를 통한 상시 안정화",
+                  "children": []
+                },
+                {
+                  "id": 1792,
+                  "name": "개발문화의 구축",
+                  "children": []
+                },
+                {
+                  "id": 3848,
+                  "name": "DBMS 개선 연구 참여",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 2368,
+              "name": "CIM을 위한 안전한 프레임워크",
+              "children": [
+                {
+                  "id": 2369,
+                  "name": "정기 업데이트 및 핫픽스를 통한 상시 안정화",
+                  "children": []
+                },
+                {
+                  "id": 2371,
+                  "name": "상시 리팩토링 및 기술문서 확보",
+                  "children": []
+                },
+                {
+                  "id": 2372,
+                  "name": "차세대 Framework 기술 연구",
+                  "children": []
+                },
+                {
+                  "id": 3534,
+                  "name": "개발 문화 강화",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 3566,
+              "name": "사용자의 업무 효율을 획기적으로 향상시키는 올바른 모델링 기능 구현",
+              "children": [
+                {
+                  "id": 3567,
+                  "name": "사용자가 환호하는 모델링 기능 개발",
+                  "children": []
+                },
+                {
+                  "id": 4042,
+                  "name": "라이브러리 제작 과정의 안정성과 결과물의 품질 향상",
+                  "children": []
+                },
+                {
+                  "id": 4043,
+                  "name": "미래를 위한 기술 담기",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 3721,
+              "name": "CIM 렌더링 개발자로 거듭나기",
+              "children": [
+                {
+                  "id": 3722,
+                  "name": " Rendering 엔진 기술 습득",
+                  "children": []
+                },
+                {
+                  "id": 3723,
+                  "name": "CIM 기능/비기능 이슈처리",
+                  "children": []
+                },
+                {
+                  "id": 3724,
+                  "name": "성장을 위한 노력",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 3740,
+              "name": "Flexible하고 Automatic한 CIM ",
+              "children": [
+                {
+                  "id": 3893,
+                  "name": "외부 라이브러리 및 포멧, 기능 요구사항 대응",
+                  "children": []
+                },
+                {
+                  "id": 3895,
+                  "name": "Gitlab 운영 및 파일서버 유지보수(CI/CD)",
+                  "children": []
+                },
+                {
+                  "id": 3896,
+                  "name": "구성원들의 업무 효율 향상 및 개발 문화 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 3748,
+              "name": "미래를 이끌어가는 CIM 만들기",
+              "children": [
+                {
+                  "id": 3749,
+                  "name": "신기능 개발을 통한 사용성 및 편의성 제공",
+                  "children": []
+                },
+                {
+                  "id": 3750,
+                  "name": "비기능 개발 요구사항 달성",
+                  "children": []
+                },
+                {
+                  "id": 3751,
+                  "name": "미래 지향적 성장 기반 및 기술 축적",
+                  "children": []
+                },
+                {
+                  "id": 3965,
+                  "name": "개발 문화 강화",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": 888,
+          "name": "CIM의 성공적인 사업 성과 달성을 위한 제품 경쟁력 강화",
+          "children": [
+            {
+              "id": 571,
+              "name": "CIM의 성공적인 사업 성과 달성을 위한 제품 경쟁력 강화",
+              "children": [
+                {
+                  "id": 572,
+                  "name": "CIM-Civil 연동 및 모델링 기능 강화",
+                  "children": []
+                },
+                {
+                  "id": 573,
+                  "name": "CIM의 사업 성과 달성 지원",
+                  "children": []
+                },
+                {
+                  "id": 574,
+                  "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 1031,
+              "name": "CIM의 상품성 강화를 위한 기능 수준 달성",
+              "children": []
+            },
+            {
+              "id": 1040,
+              "name": "CIM의 사업 성과 달성을 위한 제품 출시 및 지원",
+              "children": []
+            },
+            {
+              "id": 1041,
+              "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+              "children": []
+            },
+            {
+              "id": 2307,
+              "name": "CIM의 사용성 강화를 통한 사업성 증대 및 Drafter 주요 IRX 기능의 개발 완료",
+              "children": [
+                {
+                  "id": 2308,
+                  "name": "CIM/Drafter 유저 사용성 강화",
+                  "children": []
+                },
+                {
+                  "id": 2309,
+                  "name": "CIM의 사업 성과 달성을 위한 제품 출시 및 지원",
+                  "children": []
+                },
+                {
+                  "id": 2310,
+                  "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 2327,
+              "name": "CIM 상세모델링 기술 시장 선도를 위한 기능 구축",
+              "children": [
+                {
+                  "id": 2328,
+                  "name": "CIM의 상품성 강화를 위한 기능 수준 달성",
+                  "children": []
+                },
+                {
+                  "id": 2329,
+                  "name": "CIM의 사업 성과 달성을 위한 제품 출시 및 지원",
+                  "children": []
+                },
+                {
+                  "id": 2330,
+                  "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 2582,
+              "name": "Drafter의 성공적인 사업 성과 달성을 위한 제품 경쟁력 강화",
+              "children": [
+                {
+                  "id": 2583,
+                  "name": "Drafter의 상품성 강화를 위한 기능 수준 달성",
+                  "children": []
+                },
+                {
+                  "id": 2584,
+                  "name": "CIM의 사업 성과 달성을 위한 제품 출시 및 지원",
+                  "children": []
+                },
+                {
+                  "id": 2585,
+                  "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": 6500,
+              "name": "CIM의 사용성 강화를 통한 사업성 증대 및 Drafter의 주요 IRX 기능의 개발 완료",
+              "children": [
+                {
+                  "id": 6501,
+                  "name": "CIM 상품성 강화",
+                  "children": []
+                },
+                {
+                  "id": 6503,
+                  "name": "제품과 팀의 발전적인 운영을 위한 기반 구축",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+  myChart.setOption(
+    (option = {
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove'
+      },
+      series: [
+        {
+          type: 'tree',
+          data: [data],
+          top: '1%',
+          left: '7%',
+          bottom: '1%',
+          right: '20%',
+          symbolSize: 7,
+          label: {
+            position: 'left',
+            verticalAlign: 'middle',
+            align: 'right',
+            fontSize: 9
+          },
+          leaves: {
+            label: {
+              position: 'right',
+              verticalAlign: 'middle',
+              align: 'left'
+            }
+          },
+          emphasis: {
+            focus: 'descendant'
+          },
+          expandAndCollapse: true,
+          animationDuration: 550,
+          animationDurationUpdate: 750
+        }
+      ]
+    })
+  );
+});
+
+if (option && typeof option === 'object') {
+    myChart.setOption(option);
+}
+
+        </script>
+    </body>
+</html>
+    
